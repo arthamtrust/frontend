@@ -66,6 +66,7 @@ $theme-colors: (
 );
 
 /* Import only the necessary stuff from bootstrap */
+// @import "../node_modules/bootstrap/scss/navbar";
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
@@ -105,6 +106,11 @@ $theme-colors: (
 
 .small-caps {
   font-variant: small-caps;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 // body {

@@ -8,31 +8,31 @@ interface Link {
 const LINKS: Link[] = [
   {
     name: 'Home',
-    to: '/',
+    to: 'home',
   },
   {
     name: 'Students',
-    to: '/',
+    to: 'student',
   },
   {
     name: 'Charity',
-    to: '/',
+    to: 'charity',
   },
   {
     name: 'Events',
-    to: '/',
+    to: 'events',
   },
   {
     name: 'Gallery',
-    to: '/',
+    to: 'gallery',
   },
   {
     name: 'Contributors',
-    to: '/',
+    to: 'contributors',
   },
   {
     name: 'Contact us',
-    to: '/',
+    to: 'contact-us',
   },
 ];
 
@@ -43,6 +43,8 @@ const LINKS: Link[] = [
 })
 export class NavigationComponent implements OnInit {
   links: Link[];
+
+  isNavbarCollapsed = true;
 
   constructor() {
     this.links = Array.from(LINKS);
