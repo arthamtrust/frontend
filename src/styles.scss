@@ -1,0 +1,212 @@
+/* You can add global styles to this file, and also import other style files */
+//
+// Color system
+//
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+) !default;
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+$colors: (
+  blue: $blue,
+  indigo: $indigo,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  green: $green,
+  teal: $teal,
+  cyan: $cyan,
+  white: $white,
+  gray: $gray-600,
+  gray-dark: $gray-800
+) !default;
+
+$theme-colors: (
+  primary: #3498db,
+  secondary: #7f8c8d,
+  success: #2ecc71,
+  info: #1abc9c,
+  warning: #f1c40f,
+  danger: #e74c3c,
+  light: #ecf0f1,
+  dark: #34495e
+);
+
+/* Import only the necessary stuff from bootstrap */
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/print";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+//@import "~bootstrap/scss/button-group";
+//@import "~bootstrap/scss/input-group";
+//@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+//@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+//@import "~bootstrap/scss/badge";
+//@import "~bootstrap/scss/jumbotron";
+//@import "~bootstrap/scss/alert";
+//@import "~bootstrap/scss/progress";
+//@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+//@import "~bootstrap/scss/modal";
+//@import "~bootstrap/scss/tooltip";
+//@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/utilities";
+
+// /* Used in all pages */
+
+.small-caps {
+  font-variant: small-caps;
+}
+
+// body {
+//   padding-top: 60px;
+// }
+
+// #footer-main {
+//   background: #111;
+//   color: white;
+//   font-size: 0.8rem;
+//   padding: 2.5rem 0;
+// }
+
+// footer a {
+//   color: #3498db;
+// }
+
+// /* All except home page: Style for header.js */
+
+// .header-title{
+//   font-size: 4.5rem;
+//   font-weight: 300;
+// }
+
+// .page-title{
+//   font-weight: 200;
+//   font-size: 2.5rem;
+// }
+
+// @include media-breakpoint-down(sm) {
+
+//   // Reduce the header title size in mobile
+//   .header-title{
+//     font-size: 3.5rem;
+//   }
+
+//   .page-title{
+//     font-size: 2rem;
+//   }
+// }
+
+// /* Home page: Used to make title in smallcaps */
+
+// .smallcaps {
+//   font-variant: small-caps;
+// }
+
+// @include media-breakpoint-down(md) {
+
+//   // Home page: remove border between elements in mobile
+//   .bottomBorder {
+//     border-bottom: 1px #aaa solid;
+//   }
+
+//   // Home page: Remove small caps in mobile
+//   .smallcaps{
+//     font-variant: normal;
+//   }
+// }
+
+// /* Home page: Used in info.js to design the three options */
+
+// @include media-breakpoint-up(md) {
+//   .fullHeight {
+//     height: 60% !important;
+//   }
+// }
+
+// .loader{
+//   height: 100%;
+// }
+
+// .spinner {
+//   border: 16px solid #f3f3f3; /* Light grey */
+//   border-top: 16px solid #3498db; /* Blue */
+//   border-radius: 50%;
+//   width: 120px;
+//   height: 120px;
+//   animation: spin 2s linear infinite;
+// }
+
+// @keyframes spin {
+//   0% { transform: rotate(0deg); }
+//   100% { transform: rotate(360deg); }
+// }
+
+// /* Gallery */
+
+// .imgCard:hover {
+//   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+//   border-radius: 0.25em;
+// }
+
+// .imgCardAnchor:hover {
+//   text-decoration: None;
+// }
+
+// #tamilQuote {
+//   font-size: 1rem;
+//   font-weight: lighter;
+
+//   p {
+//     margin-top: -0.75rem;
+//   }
+// }
