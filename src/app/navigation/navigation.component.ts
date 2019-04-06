@@ -12,7 +12,7 @@ const LINKS: Link[] = [
   },
   {
     name: 'Students',
-    to: 'student',
+    to: 'students',
   },
   {
     name: 'Charity',
