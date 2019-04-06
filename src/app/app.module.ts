@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 // Styling
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { LoadingBarModule } from '@ngx-loading-bar/core';
 
 import { NavigationComponent } from './navigation/navigation.component';
 
@@ -15,8 +17,20 @@ import { HTTP404Component } from './http404/http404.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, HTTP404Component, FooterComponent],
-  imports: [NgbCollapseModule, HomeModule, BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    NavigationComponent,
+    HTTP404Component,
+    FooterComponent,
+  ],
+  imports: [
+    LoadingBarModule,
+    LoadingBarRouterModule,
+    NgbCollapseModule,
+    HomeModule,
+    BrowserModule,
+    AppRoutingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
