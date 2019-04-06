@@ -7,6 +7,7 @@ import { MediaComponent } from './media/media.component';
 
 // Styling
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { InformationComponent } from './information/information.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     AboutUsComponent,
     MediaComponent,
+    InformationComponent,
   ],
   imports: [CommonModule, NgbCarouselModule],
   bootstrap: [HomeComponent],
