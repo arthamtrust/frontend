@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div
+      class="col-12 align-self-end m-md-4 p-4 p-md-3 border-faded border rounded"
+    >
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="embed-responsive embed-responsive-4by3 rounded">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/vgPQmSM4Y5w?rel=0&amp;controls=0&amp;showinfo=0"
+              frameBorder="0"
+              allowFullScreen="true"
+            >
+            </iframe>
+          </div>
+        </div>
+        <div class="mt-4 mt-md-0 col-12 col-md-6">
+          <ngb-carousel *ngIf="images">
+            <ng-template ngbSlide>
+              <img
+                class="d-block rounded w-100"
+                [src]="images[0]"
+                alt="First slide"
+              />
+            </ng-template>
+            <ng-template ngbSlide>
+              <img
+                class="d-block rounded w-100"
+                [src]="images[1]"
+                alt="Second slide"
+              />
+            </ng-template>
+            <ng-template ngbSlide>
+              <img
+                class="d-block rounded w-100"
+                [src]="images[2]"
+                alt="Third slide"
+              />
+            </ng-template>
+          </ngb-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

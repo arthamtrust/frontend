@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Styling
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { NavigationComponent } from './navigation/navigation.component';
 
@@ -15,7 +15,7 @@ import { HTTP404Component } from './http404/http404.component';
 
 @NgModule({
   declarations: [AppComponent, NavigationComponent, HTTP404Component],
-  imports: [NgbModule, HomeModule, BrowserModule, AppRoutingModule],
+  imports: [NgbCollapseModule, HomeModule, BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
