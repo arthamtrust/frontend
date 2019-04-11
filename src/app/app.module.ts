@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// Styling
+// Loading bar
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 
@@ -23,6 +24,7 @@ import { StudentsModule } from './students/students.module';
     BrowserModule,
     AppRoutingModule,
     StudentsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

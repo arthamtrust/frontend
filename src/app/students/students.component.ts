@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
-  styleUrls: ['./students.component.scss']
+  styleUrls: ['./students.component.scss'],
 })
 export class StudentsComponent implements OnInit {
+  title: string;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    this.title = 'Students supported by us';
   }
 
+  ngOnInit() {}
 }

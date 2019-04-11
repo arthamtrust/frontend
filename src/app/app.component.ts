@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingBarService } from '@ngx-loading-bar/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  loadingBarSpinner = false;
-  loadingBarColor = '#3498db';
+  loadingBarSpinner: boolean;
+  loadingBarColor: string;
+
+  constructor(private loadingBar: LoadingBarService) {
+    this.loadingBarSpinner = false;
+    this.loadingBarColor = '#3498db';
+  }
 }
