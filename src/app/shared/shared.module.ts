@@ -4,8 +4,7 @@ import { PageHeaderComponent } from './page-header/page-header.component';
 
 @NgModule({
   declarations: [PageHeaderComponent],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
+  exports: [PageHeaderComponent],
 })
-export class SharedModule { }
+export class SharedModule {}

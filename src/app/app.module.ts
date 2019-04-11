@@ -11,6 +11,7 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
 // Import modules
 import { HomeModule } from './home/home.module';
 import { CoreModule } from './core/core.module';
+import { StudentsModule } from './students/students.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { CoreModule } from './core/core.module';
     HomeModule,
     BrowserModule,
     AppRoutingModule,
+    StudentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
