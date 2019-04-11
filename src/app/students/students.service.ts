@@ -10,14 +10,24 @@ import { Student } from './student.type';
   providedIn: 'root',
 })
 export class StudentsService {
-  constructor(private http: HttpClient) {}
+  url: string;
+
+  constructor(private http: HttpClient) {
+    this.url = `${API_URL}/students`;
+  }
 
   getStudentsList(): Observable<Student[]> {
-    const url = `${API_URL}/students`;
+    return this.http
+      .get<Student[]>(this.url)
+      .pipe(catchError(this.handleError<Student[]>('getStudentsList', [])));
+  }
+
+  getStudent(id: number): Observable<Student> {
+    const url = `${this.url}/${id}/`;
 
     return this.http
-      .get<Student[]>(url)
-      .pipe(catchError(this.handleError<Student[]>('getStudentsList', [])));
+      .get<Student>(url)
+      .pipe(catchError(this.handleError<Student>(`getStudent id=${id}`)));
   }
 
   /**

@@ -1,3 +1,33 @@
-<p>
-  student-detail works!
-</p>
+<ng-container *ngIf="student; else elseTemplate">
+  <div class="container mb-4">
+    <div id="title" class="text-center text-md-left p-2 p-md-0">
+      <h3 class="page-title pt-3 mb-5">{{ student.name }}</h3>
+    </div>
+    <div class="row border rounded p-2 pt-4">
+      <div class="col">
+        <img
+          class="float-left mr-3 mb-3"
+          [src]="student.image"
+          alt="First slide"
+          height="220"
+          width="180"
+        />
+        <div
+          class="text-justify"
+          [innerHtml]="student.description | safeHTML"
+        ></div>
+
+        <a
+          class="mt-5 mb-5 btn btn-primary w-100"
+          routerLink="/students"
+          role="button"
+        >
+          &larr; Back to Student list
+        </a>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <app-loading-page></app-loading-page>
+</ng-template>
