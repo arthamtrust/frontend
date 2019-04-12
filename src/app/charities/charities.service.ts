@@ -1,33 +1,32 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
-import { API_URL } from 'src/environments/environment';
+import { API_URL } from 'src/environments/environment.prod';
 import { Observable, of } from 'rxjs';
+import { Charity } from './charity.type';
 import { catchError } from 'rxjs/operators';
-import { Student } from './student.type';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
-export class StudentsService {
+export class CharitiesService {
   url: string;
 
   constructor(private http: HttpClient) {
-    this.url = `${API_URL}/students`;
+    this.url = `${API_URL}/charity`;
   }
 
-  getStudentsList(): Observable<Student[]> {
+  getCharitiesList(): Observable<Charity[]> {
     return this.http
-      .get<Student[]>(this.url)
-      .pipe(catchError(this.handleError<Student[]>('getStudentsList', [])));
+      .get<Charity[]>(this.url)
+      .pipe(catchError(this.handleError<Charity[]>('getCharityList', [])));
   }
 
-  getStudent(id: number): Observable<Student> {
+  getCharity(id: number): Observable<Charity> {
     const url = `${this.url}/${id}`;
 
     return this.http
-      .get<Student>(url)
-      .pipe(catchError(this.handleError<Student>(`getStudent id=${id}`)));
+      .get<Charity>(url)
+      .pipe(catchError(this.handleError<Charity>(`getCharity id=${id}`)));
   }
 
   /**

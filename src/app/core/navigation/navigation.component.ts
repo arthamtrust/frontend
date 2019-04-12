@@ -18,8 +18,8 @@ const LINKS: Link[] = [
     exact: false,
   },
   {
-    name: 'Charity',
-    to: 'charity',
+    name: 'Charities',
+    to: 'charities',
     exact: false,
   },
   {

@@ -6,7 +6,7 @@ export const environment = {
   production: false,
 };
 
-export const API_URL = 'http://127.0.0.1:8000';
+export const API_URL = 'http://127.0.0.1:8001';
 
 /*
  * For easier debugging in development mode, you can import the following file

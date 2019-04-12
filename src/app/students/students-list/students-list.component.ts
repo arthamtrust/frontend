@@ -8,9 +8,12 @@ import { Student } from '../student.type';
   styleUrls: ['./students-list.component.scss'],
 })
 export class StudentsListComponent implements OnInit {
+  title: string;
   students: Student[] = [];
 
-  constructor(private studentsService: StudentsService) {}
+  constructor(private studentsService: StudentsService) {
+    this.title = 'Students supported by us';
+  }
 
   ngOnInit() {
     this.studentsService.getStudentsList().subscribe(students => {

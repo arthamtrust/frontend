@@ -14,6 +14,7 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { HomeModule } from './home/home.module';
 import { CoreModule } from './core/core.module';
 import { StudentsModule } from './students/students.module';
+import { CharitiesModule } from './charities/charities.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +27,7 @@ import { StudentsModule } from './students/students.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     StudentsModule,
+    CharitiesModule,
     HttpClientModule,
   ],
   providers: [],

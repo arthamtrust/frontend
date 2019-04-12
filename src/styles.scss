@@ -2,115 +2,43 @@
 
 // /* Used in all pages */
 
-.small-caps {
-  font-variant: small-caps;
-}
-
 html,
 body {
   height: 100%;
 }
 
-// body {
-//   padding-top: 60px;
-// }
+/* All except home page: Style for header.js */
 
-// #footer-main {
-//   background: #111;
-//   color: white;
-//   font-size: 0.8rem;
-//   padding: 2.5rem 0;
-// }
+.header-title {
+  font-size: 4.5rem;
+  font-weight: 300;
+}
 
-// footer a {
-//   color: #3498db;
-// }
+.page-title {
+  font-weight: 200;
+  font-size: 2.25rem;
+}
 
-// /* All except home page: Style for header.js */
+@include media-breakpoint-down(sm) {
+  // Reduce the header title size in mobile
+  .header-title {
+    font-size: 3.5rem;
+  }
 
-// .header-title{
-//   font-size: 4.5rem;
-//   font-weight: 300;
-// }
+  .page-title {
+    font-size: 2rem;
+  }
+}
 
-// .page-title{
-//   font-weight: 200;
-//   font-size: 2.5rem;
-// }
+/* Home page: Used to make title in small-caps */
 
-// @include media-breakpoint-down(sm) {
+.small-caps {
+  font-variant: small-caps;
+}
 
-//   // Reduce the header title size in mobile
-//   .header-title{
-//     font-size: 3.5rem;
-//   }
-
-//   .page-title{
-//     font-size: 2rem;
-//   }
-// }
-
-// /* Home page: Used to make title in smallcaps */
-
-// .smallcaps {
-//   font-variant: small-caps;
-// }
-
-// @include media-breakpoint-down(md) {
-
-//   // Home page: remove border between elements in mobile
-//   .bottomBorder {
-//     border-bottom: 1px #aaa solid;
-//   }
-
-//   // Home page: Remove small caps in mobile
-//   .smallcaps{
-//     font-variant: normal;
-//   }
-// }
-
-// /* Home page: Used in info.js to design the three options */
-
-// @include media-breakpoint-up(md) {
-//   .fullHeight {
-//     height: 60% !important;
-//   }
-// }
-
-// .loader{
-//   height: 100%;
-// }
-
-// .spinner {
-//   border: 16px solid #f3f3f3; /* Light grey */
-//   border-top: 16px solid #3498db; /* Blue */
-//   border-radius: 50%;
-//   width: 120px;
-//   height: 120px;
-//   animation: spin 2s linear infinite;
-// }
-
-// @keyframes spin {
-//   0% { transform: rotate(0deg); }
-//   100% { transform: rotate(360deg); }
-// }
-
-// /* Gallery */
-
-// .imgCard:hover {
-//   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-//   border-radius: 0.25em;
-// }
-
-// .imgCardAnchor:hover {
-//   text-decoration: None;
-// }
-
-// #tamilQuote {
-//   font-size: 1rem;
-//   font-weight: lighter;
-
-//   p {
-//     margin-top: -0.75rem;
-//   }
-// }
+@include media-breakpoint-down(md) {
+  // Home page: Remove small caps in mobile
+  .small-caps {
+    font-variant: normal;
+  }
+}

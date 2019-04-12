@@ -1,5 +1,8 @@
 <ng-container *ngIf="students.length; else elseTemplate">
   <section class="container">
+    <div id="title" class="text-center text-md-left p-2 p-md-0">
+      <h3 class="page-title pt-3 mb-5">{{ title }}</h3>
+    </div>
     <div
       *ngFor="let student of students"
       class="row mb-3 p-lg-5 p-4 border rounded"
@@ -14,7 +17,9 @@
         />
       </div>
       <div class="col-lg-10 text-center pl-lg-5">
-        <h3 class="text-primary text-lg-left">{{ student.name }}</h3>
+        <h3 class="text-primary text-lg-left">
+          <a [routerLink]="student.id">{{ student.name }}</a>
+        </h3>
         <p
           class="lead text-muted text-justify"
           [innerHtml]="student.short_description"
