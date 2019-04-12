@@ -14,7 +14,7 @@
         >
           <div class="row">
             <div class="col-12 p-md-3">
-              <a routerLink="charity.id">
+              <a [routerLink]="['/charities', 'post', charity.id]">
                 <h3 class="text-primary">{{ charity.title }}</h3>
               </a>
               <h6 class="text-muted">
@@ -42,7 +42,7 @@
         <ngb-accordion #acc="ngbAccordion">
           <ngb-panel *ngFor="let charity of charitySidebar">
             <ng-template ngbPanelTitle>
-              <a routerLink="charities">
+              <a [routerLink]="['/charities', charity.year]">
                 {{ charity.year }}
               </a>
             </ng-template>

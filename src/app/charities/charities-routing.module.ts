@@ -7,7 +7,12 @@ const routes: Routes = [
   {
     path: 'charities',
     component: CharitiesComponent,
-    children: [{ path: '', component: CharityListComponent }],
+    children: [
+      { path: '', component: CharityListComponent },
+      { path: 'post/:id', component: CharityListComponent },
+      { path: ':year', component: CharityListComponent },
+      { path: ':year/:month', component: CharityListComponent },
+    ],
   },
 ];
 

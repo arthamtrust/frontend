@@ -7,18 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
 import { CharitiesService } from './charities.service';
 import { CharityListComponent } from './charity-list/charity-list.component';
-import { CharityDetailComponent } from './charity-detail/charity-detail.component';
+
 import {
   NgbPaginationModule,
   NgbAccordionModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [
-    CharitiesComponent,
-    CharityListComponent,
-    CharityDetailComponent,
-  ],
+  declarations: [CharitiesComponent, CharityListComponent],
   imports: [
     CommonModule,
     HttpClientModule,
