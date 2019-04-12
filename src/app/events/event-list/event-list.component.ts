@@ -19,8 +19,8 @@ export class EventListComponent implements OnInit, OnDestroy {
   pageSize: number;
   collectionSize: number;
 
-  events: Event[];
-  eventSidebar: EventSidebar[];
+  events: Event[] = [];
+  eventSidebar: EventSidebar[] = [];
 
   routerSubscription: Subscription;
 

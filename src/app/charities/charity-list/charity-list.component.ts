@@ -19,8 +19,8 @@ export class CharityListComponent implements OnInit, OnDestroy {
   pageSize: number;
   collectionSize: number;
 
-  charities: Charity[];
-  charitySidebar: CharitySidebar[];
+  charities: Charity[] = [];
+  charitySidebar: CharitySidebar[] = [];
 
   routerSubscription: Subscription;
 
