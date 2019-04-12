@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { API_URL } from 'src/environments/environment.prod';
+import { API_URL } from 'src/environments/environment';
 import { Observable, of } from 'rxjs';
 import { Charity } from './charity.type';
 import { catchError } from 'rxjs/operators';

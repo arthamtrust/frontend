@@ -5,11 +5,22 @@ import { LoadingPageComponent } from './loading-page/loading-page.component';
 import { LoadingBarService, LoadingBarModule } from '@ngx-loading-bar/core';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { SafeHTMLPipe } from './safe-html.pipe';
+import { DmyDatePipe } from './dmy-date.pipe';
 
 @NgModule({
-  declarations: [PageHeaderComponent, LoadingPageComponent, SafeHTMLPipe],
+  declarations: [
+    PageHeaderComponent,
+    LoadingPageComponent,
+    SafeHTMLPipe,
+    DmyDatePipe,
+  ],
   imports: [CommonModule, LoadingBarModule, LoadingBarHttpClientModule],
   providers: [LoadingBarService],
-  exports: [PageHeaderComponent, LoadingPageComponent, SafeHTMLPipe],
+  exports: [
+    PageHeaderComponent,
+    LoadingPageComponent,
+    SafeHTMLPipe,
+    DmyDatePipe,
+  ],
 })
 export class SharedModule {}

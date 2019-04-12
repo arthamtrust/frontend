@@ -1,0 +1,35 @@
+<ng-container *ngIf="charities; else elseTemplate">
+  <section class="container">
+    <div id="title" class="text-center text-md-left p-2 p-md-0">
+      <h3 class="page-title pt-3 mb-5">{{ title }}</h3>
+    </div>
+    <div class="row align-items-baseline justify-content-center">
+      <div class="col-md-8">
+        <!-- Charity cards -->
+        <div *ngFor="let charity of charities">
+          <div class="row">
+            <div class="col-12 p-md-3">
+              <a routerLink="charity.id">
+                <h3 class="text-primary">{{ charity.title }}</h3>
+              </a>
+              <h6 class="text-muted">
+                {{ charity.published_date | dmyDate }}
+              </h6>
+              <p
+                class="text-muted text-justify "
+                [innerHtml]="charity.content | safeHTML"
+              ></p>
+            </div>
+          </div>
+          <hr />
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <!-- Sidebar -->
+      </div>
+    </div>
+  </section>
+</ng-container>
+<ng-template #elseTemplate>
+  <app-loading-page></app-loading-page>
+</ng-template>
