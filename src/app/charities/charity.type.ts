@@ -5,3 +5,8 @@ export interface Charity {
   published_date: string;
   created_date: string;
 }
+
+export interface CharitySidebar {
+  year: string;
+  months: string[];
+}

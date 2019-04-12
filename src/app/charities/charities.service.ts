@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { API_URL } from 'src/environments/environment';
 import { Observable, of } from 'rxjs';
-import { Charity } from './charity.type';
+import { Charity, CharitySidebar } from './charity.type';
 import { catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
@@ -19,6 +19,16 @@ export class CharitiesService {
     return this.http
       .get<Charity[]>(this.url)
       .pipe(catchError(this.handleError<Charity[]>('getCharityList', [])));
+  }
+
+  getCharitiesSidebar(): Observable<CharitySidebar[]> {
+    const url = `${this.url}/sidebar`;
+
+    return this.http
+      .get<CharitySidebar[]>(url)
+      .pipe(
+        catchError(this.handleError<CharitySidebar[]>(`getCharitySidebar`, [])),
+      );
   }
 
   getCharity(id: number): Observable<Charity> {
