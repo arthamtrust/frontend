@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 import { StudentsRoutingModule } from './students-routing.module';
 import { StudentsComponent } from './students.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
@@ -14,7 +16,7 @@ import { StudentsService } from './students.service';
     StudentDetailComponent,
     StudentsListComponent,
   ],
-  imports: [CommonModule, StudentsRoutingModule, SharedModule],
+  imports: [CommonModule, NgxChartsModule, StudentsRoutingModule, SharedModule],
   providers: [StudentsService],
 })
 export class StudentsModule {}

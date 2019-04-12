@@ -10,6 +10,31 @@ import { StudentsService } from '../students.service';
 })
 export class StudentDetailComponent implements OnInit {
   student: Student;
+  graphData: any[] = [
+    {
+      name: 'marks',
+      series: [],
+    },
+  ];
+
+  view: any[] = [700, 400];
+
+  // options
+  showXAxis = true;
+  showYAxis = true;
+  gradient = false;
+  showLegend = false;
+  showXAxisLabel = true;
+  xAxisLabel = 'Country';
+  showYAxisLabel = true;
+  yAxisLabel = 'Population';
+
+  colorScheme = {
+    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
+  };
+
+  // line, area
+  autoScale = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,9 +53,17 @@ export class StudentDetailComponent implements OnInit {
         'text/html',
       );
       const elements = descriptionElement.querySelectorAll('#marks *');
-      elements.forEach(({ textContent }) => {
-        console.log(textContent);
+      elements.forEach(({ textContent }, index) => {
+        const dataPoint = +textContent.slice(0, textContent.length - 1);
+        if (dataPoint) {
+          this.graphData[0].series.push({
+            name: index.toString(),
+            value: dataPoint,
+          });
+        }
       });
+
+      console.log(this.graphData);
     });
   }
 }

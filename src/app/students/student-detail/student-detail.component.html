@@ -16,6 +16,24 @@
           class="text-justify"
           [innerHtml]="student.description | safeHTML"
         ></div>
+        <div>
+          <ngx-charts-line-chart
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="graphData"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [autoScale]="autoScale"
+            (select)="onSelect($event)"
+          >
+          </ngx-charts-line-chart>
+        </div>
 
         <a
           class="mt-5 mb-5 btn btn-primary w-100"
