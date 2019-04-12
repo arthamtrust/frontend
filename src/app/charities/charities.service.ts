@@ -31,14 +31,6 @@ export class CharitiesService {
       );
   }
 
-  getCharity(id: number): Observable<Charity> {
-    const url = `${this.url}/${id}`;
-
-    return this.http
-      .get<Charity>(url)
-      .pipe(catchError(this.handleError<Charity>(`getCharity id=${id}`)));
-  }
-
   /**
    * Handle Http operation that failed.
    * Let the app continue.
