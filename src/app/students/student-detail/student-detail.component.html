@@ -16,9 +16,8 @@
           class="text-justify"
           [innerHtml]="student.description | safeHTML"
         ></div>
-        <div>
+        <div class="pt-5 m-1 h-25">
           <ngx-charts-line-chart
-            [view]="view"
             [scheme]="colorScheme"
             [results]="graphData"
             [gradient]="gradient"
@@ -30,7 +29,7 @@
             [xAxisLabel]="xAxisLabel"
             [yAxisLabel]="yAxisLabel"
             [autoScale]="autoScale"
-            (select)="onSelect($event)"
+            
           >
           </ngx-charts-line-chart>
         </div>
