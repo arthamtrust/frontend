@@ -1,0 +1,71 @@
+<ng-container *ngIf="events; else elseTemplate">
+  <section class="container">
+    <div id="title" class="text-center text-md-left p-2 p-md-0">
+      <h3 class="page-title pt-3 mb-5">{{ title }}</h3>
+    </div>
+    <div class="row align-items-baseline justify-content-center">
+      <div class="col-md-8">
+        <!-- Event cards -->
+        <div
+          *ngFor="
+            let event of (events
+              | slice: (page - 1) * pageSize:(page - 1) * pageSize + pageSize)
+          "
+        >
+          <div class="row">
+            <div class="col-12 p-md-3">
+              <a routerLink="/events" [queryParams]="{ id: event.id }">
+                <h3 class="text-primary">{{ event.title }}</h3>
+              </a>
+              <h6 class="text-muted">
+                {{ event.published_date | date: "longDate" }}
+              </h6>
+              <p
+                class="text-muted text-justify "
+                [innerHtml]="event.content | safeHTML"
+              ></p>
+            </div>
+          </div>
+          <hr />
+        </div>
+        <ngb-pagination
+          *ngIf="events.length > pageSize"
+          [(page)]="page"
+          [pageSize]="pageSize"
+          [collectionSize]="events.length"
+          aria-label="Default pagination"
+        ></ngb-pagination>
+      </div>
+      <div class="col-md-4 mb-5">
+        <h3 class="p-2 font-weight-light">
+          Events archive
+        </h3>
+        <a class="btn btn-success text-left p-3 btn-block" routerLink="/events"
+          >All Posts</a
+        >
+        <ngb-accordion #acc="ngbAccordion">
+          <ngb-panel *ngFor="let event of eventSidebar">
+            <ng-template ngbPanelTitle>
+              {{ event.year }}
+            </ng-template>
+
+            <ng-template ngbPanelContent>
+              <div *ngFor="let month of event.months">
+                <a
+                  routerLink="/events"
+                  [queryParams]="{ year: event.year, month: month }"
+                  class="list-group-item border-0 p-0 my-2 ml-4"
+                >
+                  {{ month | numToMonth }}
+                </a>
+              </div>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </div>
+    </div>
+  </section>
+</ng-container>
+<ng-template #elseTemplate>
+  <app-loading-page></app-loading-page>
+</ng-template>

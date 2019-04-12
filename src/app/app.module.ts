@@ -15,6 +15,7 @@ import { HomeModule } from './home/home.module';
 import { CoreModule } from './core/core.module';
 import { StudentsModule } from './students/students.module';
 import { CharitiesModule } from './charities/charities.module';
+import { EventsModule } from './events/events.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { CharitiesModule } from './charities/charities.module';
     AppRoutingModule,
     StudentsModule,
     CharitiesModule,
+    EventsModule,
     HttpClientModule,
   ],
   providers: [],
