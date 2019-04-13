@@ -18,6 +18,7 @@ import { CharitiesModule } from './charities/charities.module';
 import { EventsModule } from './events/events.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { ContactModule } from './contact/contact.module';
+import { ContributorsModule } from './contributors/contributors.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +34,7 @@ import { ContactModule } from './contact/contact.module';
     CharitiesModule,
     EventsModule,
     GalleryModule,
+    ContributorsModule,
     ContactModule,
     HttpClientModule,
   ],
