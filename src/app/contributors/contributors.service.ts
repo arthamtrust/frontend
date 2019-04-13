@@ -16,15 +16,17 @@ export class ContributorsService {
   }
 
   getContributors(
-    year: number = null,
-    month: number = null,
+    year: string = null,
+    month: string = null,
   ): Observable<Contributor> {
+    let url = this.url;
+
     if (year && month) {
-      this.url = `${this.url}/${year}/${month}`;
+      url = `${url}/${year}/${month}`;
     }
 
     return this.http
-      .get<Contributor>(this.url)
+      .get<Contributor>(url)
       .pipe(catchError(this.handleError<Contributor>('getContributors')));
   }
 

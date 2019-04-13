@@ -11,31 +11,42 @@
               <div ngbDropdown class="d-inline-block">
                 <button
                   class="btn btn-info"
-                  id="year-dropdown"
+                  id="month-dropdown"
                   ngbDropdownToggle
                 >
-                  Choose year
+                  {{ year }}
                 </button>
-                <div ngbDropdownMenu aria-labelledby="year-dropdown">
-                  <button ngbDropdownItem>Action - 1</button>
-                  <button ngbDropdownItem>Another Action</button>
-                  <button ngbDropdownItem>Something else is here</button>
+                <div ngbDropdownMenu aria-labelledby="month-dropdown">
+                  <button
+                    ngbDropdownItem
+                    *ngFor="let contributor of contributorSidebar"
+                    (click)="onYearClicked(contributor.year)"
+                  >
+                    {{ contributor.year }}
+                  </button>
                 </div>
               </div>
             </div>
             <div class="col-6">
               <div ngbDropdown class="d-inline-block">
                 <button
-                  class="btn btn-info disabled"
+                  class="btn btn-info"
                   id="month-dropdown"
                   ngbDropdownToggle
+                  [disabled]="monthDisabled"
                 >
-                  Choose month
+                  {{ month | numToMonth }}
                 </button>
                 <div ngbDropdownMenu aria-labelledby="month-dropdown">
-                  <button ngbDropdownItem>Action - 1</button>
-                  <button ngbDropdownItem>Another Action</button>
-                  <button ngbDropdownItem>Something else is here</button>
+                  <!-- [routerLink]="['/contributors']"
+                  [queryParams]="{ year: year, month: month_number }" -->
+                  <a
+                    *ngFor="let month_number of months"
+                    ngbDropdownItem
+                    (click)="onMonthClicked(month_number)"
+                  >
+                    {{ month_number | numToMonth }}
+                  </a>
                 </div>
               </div>
             </div>
@@ -46,10 +57,11 @@
   </div>
   <div class="container">
     <section id="secondTitle" class="text-center text-md-left">
-      <h2 class="pt-3 mb-5 font-weight-light">date</h2>
+      <h2 class="pt-3 mb-5 font-weight-light">
+        {{ contributors.contribution_date }}
+      </h2>
     </section>
-
-    <!-- <div dangerouslySetInnerHTML={createMarkup()}> -->
+    <div [innerHtml]="contributors.contributor_list"></div>
   </div>
 </ng-container>
 <ng-template #elseTemplate>

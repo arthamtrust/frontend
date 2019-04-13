@@ -48,7 +48,6 @@ export class EventListComponent implements OnInit, OnDestroy {
         if (id) {
           this.eventsService.getEventsList().subscribe(events => {
             this.events = events.filter(event => event.id === id);
-            console.log(events.filter(event => event.id === id));
           });
         } else if (year && month) {
           this.eventsService.getEventsList().subscribe(events => {

@@ -1,27 +1,84 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ContributorsService } from '../contributors.service';
 import { ContributorSidebar, Contributor } from '../contributor.type';
+import { Subscription } from 'rxjs';
+import { Params, ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-contributor-list',
   templateUrl: './contributor-list.component.html',
   styleUrls: ['./contributor-list.component.scss'],
 })
-export class ContributorListComponent implements OnInit {
+export class ContributorListComponent implements OnInit, OnDestroy {
   contributors: Contributor;
   contributorSidebar: ContributorSidebar[];
 
-  constructor(private contributorService: ContributorsService) {}
+  year: string;
+  month: string;
+  months: string[];
+  selectedMonths: string[];
+  monthDisabled: boolean;
+
+  routerSubscription: Subscription;
+
+  constructor(
+    private contributorService: ContributorsService,
+    private route: ActivatedRoute,
+    private router: Router,
+  ) {
+    this.year = 'Choose year';
+    this.month = 'Choose month';
+    this.monthDisabled = true;
+  }
 
   ngOnInit() {
-    this.contributorService.getContributors().subscribe(contributors => {
-      this.contributors = contributors;
-    });
+    this.routerSubscription = this.route.queryParams.subscribe(
+      (params: Params) => {
+        const year = params['year'];
+        const month = params['month'];
+
+        console.log(year, month);
+
+        if (year && month) {
+          this.contributorService
+            .getContributors(year, month)
+            .subscribe(contributors => {
+              this.contributors = contributors;
+            });
+        } else {
+          this.contributorService.getContributors().subscribe(contributors => {
+            this.contributors = contributors;
+          });
+        }
+
+        console.log(this.contributors);
+      },
+    );
 
     this.contributorService
       .getContributorsSidebar()
       .subscribe(contributorSidebar => {
         this.contributorSidebar = contributorSidebar;
       });
+  }
+
+  onYearClicked(year: string) {
+    this.year = year;
+    this.monthDisabled = false;
+    const selectedYear = this.contributorSidebar.filter(
+      data => data.year === year,
+    );
+    this.months = selectedYear[0].months;
+  }
+
+  onMonthClicked(month: string) {
+    this.month = month;
+    this.router.navigate(['/contributors'], {
+      queryParams: { month, year: this.year },
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.routerSubscription.unsubscribe();
   }
 }
