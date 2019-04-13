@@ -1,3 +1,30 @@
-<p>
-  donate works!
-</p>
+<div class="container">
+  <section id="title" class="text-center text-md-left">
+    <h3 class="page-title pt-3 mb-2">Account details for Donation</h3>
+  </section>
+  <section id="details" class="mb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 d-flex align-items-center mt-4">
+          <img
+            class="d-block mx-auto"
+            src="assets/img/donation.png"
+            alt="Donate"
+            height="150"
+            width="150"
+          />
+        </div>
+        <div class="col-md-7 text-left mx-md-auto">
+          <hr />
+          <div *ngFor="let detail of details">
+            <div class="row">
+              <div class="col-md-3 font-weight-bold">{{ detail.name }}</div>
+              <div class="col">{{ detail.detail }}</div>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

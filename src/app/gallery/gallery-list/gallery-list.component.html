@@ -3,26 +3,24 @@
     <section id="title" class="text-center text-md-left">
       <h3 class="page-title pt-3 mb-2">{{ title }}</h3>
     </section>
-    <div
-      class="row flex-wrap justify-content-between align-items-stretch mx-auto my-4"
-    >
-      <a
+    <div id="gallery-container" class="row mx-auto my-4">
+      <div
         *ngFor="let gallery of galleries"
-        target="_blank"
-        [href]="gallery.url"
-        class="image-card card col-7 col-sm-6 col-md-3 col-lg-2 image-card-anchor p-2 mx-1 my-2 my-sm-4"
+        class="image-card card col-7 col-sm-6 col-md-3 col-lg-2 p-2 mx-1 my-2 my-sm-4" 
       >
-        <img
-          class="card-img-top rounded"
-          [src]="gallery.thumbnail"
-          alt="Album Thumbnail"
-        />
-        <div class="card-body">
-          <div class="card-text text-center">
-            {{ gallery.title }}
+        <a target="_blank" [href]="gallery.url">
+          <img
+            class="card-img-top rounded"
+            [src]="gallery.thumbnail"
+            alt="Album Thumbnail"
+          />
+          <div class="card-body">
+            <div class="card-text text-center">
+              {{ gallery.title }}
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
     </div>
   </div>
 </ng-container>
