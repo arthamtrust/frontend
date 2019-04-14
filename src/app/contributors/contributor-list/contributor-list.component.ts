@@ -37,21 +37,17 @@ export class ContributorListComponent implements OnInit, OnDestroy {
         const year = params['year'];
         const month = params['month'];
 
-        console.log(year, month);
-
         if (year && month) {
           this.contributorService
             .getContributors(year, month)
             .subscribe(contributors => {
-              this.contributors = contributors;
+              this.contributors = contributors[0];
             });
         } else {
           this.contributorService.getContributors().subscribe(contributors => {
             this.contributors = contributors;
           });
         }
-
-        console.log(this.contributors);
       },
     );
 

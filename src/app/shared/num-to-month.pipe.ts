@@ -5,7 +5,13 @@ import * as moment from 'moment';
   name: 'numToMonth',
 })
 export class NumToMonthPipe implements PipeTransform {
-  transform(value: any, args?: any): any {
-    return moment(value, 'MM').format('MMMM');
+  transform(value: any, defaultValue: string = 'Invalid date'): any {
+    const month = moment(value, 'MM');
+
+    if (month.isValid()) {
+      return month.format('MMMM');
+    }
+
+    return defaultValue;
   }
 }
