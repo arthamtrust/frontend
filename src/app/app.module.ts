@@ -13,12 +13,6 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
 // Import modules
 import { HomeModule } from './home/home.module';
 import { CoreModule } from './core/core.module';
-import { StudentsModule } from './students/students.module';
-import { CharitiesModule } from './charities/charities.module';
-import { EventsModule } from './events/events.module';
-import { GalleryModule } from './gallery/gallery.module';
-import { ContactModule } from './contact/contact.module';
-import { ContributorsModule } from './contributors/contributors.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,12 +24,6 @@ import { ContributorsModule } from './contributors/contributors.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    StudentsModule,
-    CharitiesModule,
-    EventsModule,
-    GalleryModule,
-    ContributorsModule,
-    ContactModule,
     HttpClientModule,
   ],
   providers: [],

@@ -48,7 +48,6 @@ export class CharityListComponent implements OnInit, OnDestroy {
         if (id) {
           this.charitiesService.getCharitiesList().subscribe(charities => {
             this.charities = charities.filter(charity => charity.id === id);
-            console.log(charities.filter(charity => charity.id === id));
           });
         } else if (year && month) {
           this.charitiesService.getCharitiesList().subscribe(charities => {
