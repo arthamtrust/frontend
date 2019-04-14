@@ -38,12 +38,11 @@
                   {{ month | numToMonth: "Choose month" }}
                 </button>
                 <div ngbDropdownMenu aria-labelledby="month-dropdown">
-                  <!-- [routerLink]="['/contributors']"
-                  [queryParams]="{ year: year, month: month_number }" -->
                   <a
                     *ngFor="let month_number of months"
                     ngbDropdownItem
-                    (click)="onMonthClicked(month_number)"
+                    [routerLink]="['/contributors']"
+                    [queryParams]="{ year: year, month: month_number }"
                   >
                     {{ month_number | numToMonth }}
                   </a>

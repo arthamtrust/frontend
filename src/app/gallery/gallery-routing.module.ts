@@ -5,7 +5,7 @@ import { GalleryListComponent } from './gallery-list/gallery-list.component';
 
 const routes: Routes = [
   {
-    path: 'gallery',
+    path: '',
     component: GalleryComponent,
     children: [{ path: '', component: GalleryListComponent }],
   },

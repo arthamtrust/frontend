@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ContributorsService } from '../contributors.service';
 import { ContributorSidebar, Contributor } from '../contributor.type';
 import { Subscription } from 'rxjs';
-import { Params, ActivatedRoute, Router } from '@angular/router';
+import { Params, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contributor-list',
@@ -24,7 +24,6 @@ export class ContributorListComponent implements OnInit, OnDestroy {
   constructor(
     private contributorService: ContributorsService,
     private route: ActivatedRoute,
-    private router: Router,
   ) {
     this.year = 'Choose year';
     this.month = 'Choose month';
@@ -38,6 +37,9 @@ export class ContributorListComponent implements OnInit, OnDestroy {
         const month = params['month'];
 
         if (year && month) {
+          this.year = year;
+          this.month = month;
+
           this.contributorService
             .getContributors(year, month)
             .subscribe(contributors => {
@@ -65,13 +67,6 @@ export class ContributorListComponent implements OnInit, OnDestroy {
       data => data.year === year,
     );
     this.months = selectedYear[0].months;
-  }
-
-  onMonthClicked(month: string) {
-    this.month = month;
-    this.router.navigate(['/contributors'], {
-      queryParams: { month, year: this.year },
-    });
   }
 
   ngOnDestroy(): void {

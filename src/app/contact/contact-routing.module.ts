@@ -6,7 +6,7 @@ import { DonateComponent } from './donate/donate.component';
 
 const routes: Routes = [
   {
-    path: 'contact-us',
+    path: '',
     component: ContactComponent,
     children: [
       { path: '', component: ContactUsComponent },

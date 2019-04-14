@@ -5,7 +5,7 @@ import { ContributorListComponent } from './contributor-list/contributor-list.co
 
 const routes: Routes = [
   {
-    path: 'contributors',
+    path: '',
     component: ContributorsComponent,
     children: [{ path: '', component: ContributorListComponent }],
   },

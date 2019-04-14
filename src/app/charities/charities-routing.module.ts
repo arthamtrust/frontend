@@ -5,7 +5,7 @@ import { CharityListComponent } from './charity-list/charity-list.component';
 
 const routes: Routes = [
   {
-    path: 'charities',
+    path: '',
     component: CharitiesComponent,
     children: [{ path: '', component: CharityListComponent }],
   },
