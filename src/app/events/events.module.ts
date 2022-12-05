@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import { EventsRoutingModule } from './events-routing.module';
-import { EventsComponent } from './events.component';
-import { HttpClientModule } from '@angular/common/http';
-import { SharedModule } from '../shared/shared.module';
-import { EventsService } from './events.service';
-import { EventListComponent } from './event-list/event-list.component';
+import { EventsRoutingModule } from "./events-routing.module";
+import { EventsComponent } from "./events.component";
+import { HttpClientModule } from "@angular/common/http";
+import { SharedModule } from "../shared/shared.module";
+import { EventsService } from "./events.service";
+import { EventListComponent } from "./event-list/event-list.component";
 
 import {
   NgbPaginationModule,
   NgbAccordionModule,
-} from '@ng-bootstrap/ng-bootstrap';
+} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [EventsComponent, EventListComponent],

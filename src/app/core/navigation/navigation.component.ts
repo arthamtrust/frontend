@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 interface Link {
   name: string;
@@ -8,46 +8,46 @@ interface Link {
 
 const LINKS: Link[] = [
   {
-    name: 'Home',
-    to: 'home',
+    name: "Home",
+    to: "home",
     exact: true,
   },
   {
-    name: 'Students',
-    to: 'students',
+    name: "Students",
+    to: "students",
     exact: false,
   },
   {
-    name: 'Charities',
-    to: 'charities',
+    name: "Charities",
+    to: "charities",
     exact: false,
   },
   {
-    name: 'Events',
-    to: 'events',
+    name: "Events",
+    to: "events",
     exact: false,
   },
   {
-    name: 'Gallery',
-    to: 'gallery',
+    name: "Gallery",
+    to: "gallery",
     exact: false,
   },
   {
-    name: 'Contributors',
-    to: 'contributors',
+    name: "Contributors",
+    to: "contributors",
     exact: false,
   },
   {
-    name: 'Contact us',
-    to: 'contact-us',
+    name: "Contact us",
+    to: "contact-us",
     exact: false,
   },
 ];
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss'],
+  selector: "app-navigation",
+  templateUrl: "./navigation.component.html",
+  styleUrls: ["./navigation.component.scss"],
 })
 export class NavigationComponent implements OnInit {
   links: Link[];

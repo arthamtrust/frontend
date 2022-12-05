@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ContactComponent } from './contact.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
-import { DonateComponent } from './donate/donate.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { ContactComponent } from "./contact.component";
+import { ContactUsComponent } from "./contact-us/contact-us.component";
+import { DonateComponent } from "./donate/donate.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: ContactComponent,
     children: [
-      { path: '', component: ContactUsComponent },
-      { path: 'donate', component: DonateComponent },
+      { path: "", component: ContactUsComponent },
+      { path: "donate", component: DonateComponent },
     ],
   },
 ];

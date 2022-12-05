@@ -1,23 +1,23 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-  name: 'numToMonth',
+  name: "numToMonth",
 })
 export class NumToMonthPipe implements PipeTransform {
-  transform(value: any, defaultValue: string = 'Invalid date'): any {
+  transform(value: any, defaultValue: string = "Invalid date"): any {
     const monthNames = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
     ];
 
     const month = +value;

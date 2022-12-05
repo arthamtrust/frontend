@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { Gallery } from './gallery.type';
-import { API_URL } from 'src/environments/environment';
-import { catchError } from 'rxjs/operators';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable, of } from "rxjs";
+import { Gallery } from "./gallery.type";
+import { API_URL } from "src/environments/environment";
+import { catchError } from "rxjs/operators";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class GalleryService {
   url: string;
@@ -18,7 +18,7 @@ export class GalleryService {
   getGalleries(): Observable<Gallery[]> {
     return this.http
       .get<Gallery[]>(this.url)
-      .pipe(catchError(this.handleError<Gallery[]>('getGalleries', [])));
+      .pipe(catchError(this.handleError<Gallery[]>("getGalleries", [])));
   }
 
   /**
@@ -27,7 +27,7 @@ export class GalleryService {
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
-  private handleError<T>(operation = 'operation', result?: T) {
+  private handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);
 

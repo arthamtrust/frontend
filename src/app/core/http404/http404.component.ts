@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-http404',
-  templateUrl: './http404.component.html',
-  styleUrls: ['./http404.component.scss']
+  selector: "app-http404",
+  templateUrl: "./http404.component.html",
+  styleUrls: ["./http404.component.scss"],
 })
 export class HTTP404Component implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

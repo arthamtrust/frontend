@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { GalleryComponent } from './gallery.component';
-import { GalleryListComponent } from './gallery-list/gallery-list.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { GalleryComponent } from "./gallery.component";
+import { GalleryListComponent } from "./gallery-list/gallery-list.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: GalleryComponent,
-    children: [{ path: '', component: GalleryListComponent }],
+    children: [{ path: "", component: GalleryListComponent }],
   },
 ];
 

@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
+  APP_ENDPOINT: "https://db.vinoth.info/v1",
+  APP_PROJECT: "638c3341b5b5e96ee679",
 };
-
-export const API_URL = 'http://127.0.0.1:8000';
 
 /*
  * For easier debugging in development mode, you can import the following file

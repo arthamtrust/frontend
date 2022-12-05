@@ -1,13 +1,13 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ContributorsService } from '../contributors.service';
-import { ContributorSidebar, Contributor } from '../contributor.type';
-import { Subscription } from 'rxjs';
-import { Params, ActivatedRoute } from '@angular/router';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { ContributorsService } from "../contributors.service";
+import { ContributorSidebar, Contributor } from "../contributor.type";
+import { Subscription } from "rxjs";
+import { Params, ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-contributor-list',
-  templateUrl: './contributor-list.component.html',
-  styleUrls: ['./contributor-list.component.scss'],
+  selector: "app-contributor-list",
+  templateUrl: "./contributor-list.component.html",
+  styleUrls: ["./contributor-list.component.scss"],
 })
 export class ContributorListComponent implements OnInit, OnDestroy {
   contributors: Contributor;
@@ -23,18 +23,18 @@ export class ContributorListComponent implements OnInit, OnDestroy {
 
   constructor(
     private contributorService: ContributorsService,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute
   ) {
-    this.year = 'Choose year';
-    this.month = 'Choose month';
+    this.year = "Choose year";
+    this.month = "Choose month";
     this.monthDisabled = true;
   }
 
   ngOnInit() {
     this.routerSubscription = this.route.queryParams.subscribe(
       (params: Params) => {
-        const year = params['year'];
-        const month = params['month'];
+        const year = params["year"];
+        const month = params["month"];
 
         if (year && month) {
           this.year = year;
@@ -42,20 +42,22 @@ export class ContributorListComponent implements OnInit, OnDestroy {
 
           this.contributorService
             .getContributors(year, month)
-            .subscribe(contributors => {
+            .subscribe((contributors) => {
               this.contributors = contributors[0];
             });
         } else {
-          this.contributorService.getContributors().subscribe(contributors => {
-            this.contributors = contributors;
-          });
+          this.contributorService
+            .getContributors()
+            .subscribe((contributors) => {
+              this.contributors = contributors;
+            });
         }
-      },
+      }
     );
 
     this.contributorService
       .getContributorsSidebar()
-      .subscribe(contributorSidebar => {
+      .subscribe((contributorSidebar) => {
         this.contributorSidebar = contributorSidebar;
       });
   }
@@ -64,7 +66,7 @@ export class ContributorListComponent implements OnInit, OnDestroy {
     this.year = year;
     this.monthDisabled = false;
     const selectedYear = this.contributorSidebar.filter(
-      data => data.year === year,
+      (data) => data.year === year
     );
     this.months = selectedYear[0].months;
   }

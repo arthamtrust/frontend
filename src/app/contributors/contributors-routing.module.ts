@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ContributorsComponent } from './contributors.component';
-import { ContributorListComponent } from './contributor-list/contributor-list.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { ContributorsComponent } from "./contributors.component";
+import { ContributorListComponent } from "./contributor-list/contributor-list.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: ContributorsComponent,
-    children: [{ path: '', component: ContributorListComponent }],
+    children: [{ path: "", component: ContributorListComponent }],
   },
 ];
 

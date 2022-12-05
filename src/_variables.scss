@@ -24,7 +24,7 @@ $grays: (
   600: $gray-600,
   700: $gray-700,
   800: $gray-800,
-  900: $gray-900
+  900: $gray-900,
 ) !default;
 
 $blue: #007bff !default;
@@ -51,7 +51,7 @@ $colors: (
   cyan: $cyan,
   white: $white,
   gray: $gray-600,
-  gray-dark: $gray-800
+  gray-dark: $gray-800,
 ) !default;
 
 $theme-colors: (
@@ -62,5 +62,5 @@ $theme-colors: (
   warning: #f1c40f,
   danger: #e74c3c,
   light: #ecf0f1,
-  dark: #34495e
+  dark: #34495e,
 );

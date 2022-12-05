@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { API_URL } from 'src/environments/environment';
-import { Observable, of } from 'rxjs';
-import { Charity, CharitySidebar } from './charity.type';
-import { catchError } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { API_URL } from "src/environments/environment";
+import { Observable, of } from "rxjs";
+import { Charity, CharitySidebar } from "./charity.type";
+import { catchError } from "rxjs/operators";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class CharitiesService {
   url: string;
@@ -18,7 +18,7 @@ export class CharitiesService {
   getCharitiesList(): Observable<Charity[]> {
     return this.http
       .get<Charity[]>(this.url)
-      .pipe(catchError(this.handleError<Charity[]>('getCharityList', [])));
+      .pipe(catchError(this.handleError<Charity[]>("getCharityList", [])));
   }
 
   getCharitiesSidebar(): Observable<CharitySidebar[]> {
@@ -27,7 +27,7 @@ export class CharitiesService {
     return this.http
       .get<CharitySidebar[]>(url)
       .pipe(
-        catchError(this.handleError<CharitySidebar[]>(`getCharitySidebar`, [])),
+        catchError(this.handleError<CharitySidebar[]>(`getCharitySidebar`, []))
       );
   }
 
@@ -37,7 +37,7 @@ export class CharitiesService {
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
-  private handleError<T>(operation = 'operation', result?: T) {
+  private handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);
 

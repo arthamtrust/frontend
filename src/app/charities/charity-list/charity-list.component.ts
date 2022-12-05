@@ -1,15 +1,15 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CharitiesService } from '../charities.service';
-import { Charity, CharitySidebar } from '../charity.type';
-import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { CharitiesService } from "../charities.service";
+import { Charity, CharitySidebar } from "../charity.type";
+import { NgbAccordionConfig } from "@ng-bootstrap/ng-bootstrap";
+import { ActivatedRoute, Params } from "@angular/router";
 
-import { Subscription } from 'rxjs';
+import { Subscription } from "rxjs";
 
 @Component({
-  selector: 'app-charity-list',
-  templateUrl: './charity-list.component.html',
-  styleUrls: ['./charity-list.component.scss'],
+  selector: "app-charity-list",
+  templateUrl: "./charity-list.component.html",
+  styleUrls: ["./charity-list.component.scss"],
   providers: [NgbAccordionConfig],
 })
 export class CharityListComponent implements OnInit, OnDestroy {
@@ -27,9 +27,9 @@ export class CharityListComponent implements OnInit, OnDestroy {
   constructor(
     private charitiesService: CharitiesService,
     config: NgbAccordionConfig,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute
   ) {
-    this.title = 'Charities';
+    this.title = "Charities";
     this.page = 1;
     this.pageSize = 3;
 
@@ -39,19 +39,19 @@ export class CharityListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.routerSubscription = this.route.queryParams.subscribe(
       (params: Params) => {
-        const year = +params['year'];
-        const month = +params['month'];
-        const id = +params['id'];
+        const year = +params["year"];
+        const month = +params["month"];
+        const id = +params["id"];
 
         this.page = 1;
 
         if (id) {
-          this.charitiesService.getCharitiesList().subscribe(charities => {
-            this.charities = charities.filter(charity => charity.id === id);
+          this.charitiesService.getCharitiesList().subscribe((charities) => {
+            this.charities = charities.filter((charity) => charity.id === id);
           });
         } else if (year && month) {
-          this.charitiesService.getCharitiesList().subscribe(charities => {
-            this.charities = charities.filter(charity => {
+          this.charitiesService.getCharitiesList().subscribe((charities) => {
+            this.charities = charities.filter((charity) => {
               const published_date = new Date(charity.published_date);
 
               if (
@@ -65,16 +65,18 @@ export class CharityListComponent implements OnInit, OnDestroy {
             });
           });
         } else {
-          this.charitiesService.getCharitiesList().subscribe(charities => {
+          this.charitiesService.getCharitiesList().subscribe((charities) => {
             this.charities = charities;
           });
         }
-      },
+      }
     );
 
-    this.charitiesService.getCharitiesSidebar().subscribe(charitiesSidebar => {
-      this.charitySidebar = charitiesSidebar;
-    });
+    this.charitiesService
+      .getCharitiesSidebar()
+      .subscribe((charitiesSidebar) => {
+        this.charitySidebar = charitiesSidebar;
+      });
   }
 
   ngOnDestroy() {

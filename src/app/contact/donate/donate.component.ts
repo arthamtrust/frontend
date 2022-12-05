@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 interface Details {
   name: string;
@@ -6,9 +6,9 @@ interface Details {
 }
 
 @Component({
-  selector: 'app-donate',
-  templateUrl: './donate.component.html',
-  styleUrls: ['./donate.component.scss'],
+  selector: "app-donate",
+  templateUrl: "./donate.component.html",
+  styleUrls: ["./donate.component.scss"],
 })
 export class DonateComponent implements OnInit {
   details: Details[];
@@ -16,28 +16,28 @@ export class DonateComponent implements OnInit {
   constructor() {
     this.details = [
       {
-        name: 'Bank',
-        detail: 'HDFC',
+        name: "Bank",
+        detail: "HDFC",
       },
       {
-        name: 'Name',
-        detail: 'ARTHAM CHARITABLE FOUNDATION',
+        name: "Name",
+        detail: "ARTHAM CHARITABLE FOUNDATION",
       },
       {
-        name: 'Account Number',
-        detail: '50200000458360',
+        name: "Account Number",
+        detail: "50200000458360",
       },
       {
-        name: 'IFSC code',
-        detail: 'HDFC0002409',
+        name: "IFSC code",
+        detail: "HDFC0002409",
       },
       {
-        name: 'Account type',
-        detail: 'Current account',
+        name: "Account type",
+        detail: "Current account",
       },
       {
-        name: 'Branch',
-        detail: 'Bye pass, Madurai',
+        name: "Branch",
+        detail: "Bye pass, Madurai",
       },
     ];
   }

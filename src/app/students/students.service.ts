@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
-import { API_URL } from 'src/environments/environment';
-import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { Student } from './student.type';
+import { API_URL } from "src/environments/environment";
+import { Observable, of } from "rxjs";
+import { catchError } from "rxjs/operators";
+import { Student } from "./student.type";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class StudentsService {
   url: string;
@@ -19,7 +19,7 @@ export class StudentsService {
   getStudentsList(): Observable<Student[]> {
     return this.http
       .get<Student[]>(this.url)
-      .pipe(catchError(this.handleError<Student[]>('getStudentsList', [])));
+      .pipe(catchError(this.handleError<Student[]>("getStudentsList", [])));
   }
 
   getStudent(id: number): Observable<Student> {
@@ -36,7 +36,7 @@ export class StudentsService {
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
-  private handleError<T>(operation = 'operation', result?: T) {
+  private handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);
 

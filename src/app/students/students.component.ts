@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-students',
-  templateUrl: './students.component.html',
-  styleUrls: ['./students.component.scss'],
+  selector: "app-students",
+  templateUrl: "./students.component.html",
+  styleUrls: ["./students.component.scss"],
 })
 export class StudentsComponent implements OnInit {
   title: string;
 
   constructor() {
-    this.title = 'Students supported by us';
+    this.title = "Students supported by us";
   }
 
   ngOnInit() {}
