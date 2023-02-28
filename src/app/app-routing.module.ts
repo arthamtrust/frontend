@@ -8,27 +8,27 @@ const routes: Routes = [
   { path: "home", component: HomeComponent },
   {
     path: "students",
-    loadChildren: "./students/students.module#StudentsModule",
+    loadChildren: () => import('./students/students.module').then(m => m.StudentsModule),
   },
   {
     path: "charities",
-    loadChildren: ".//charities/charities.module#CharitiesModule",
+    loadChildren: () => import('.//charities/charities.module').then(m => m.CharitiesModule),
   },
   {
     path: "events",
-    loadChildren: "./events/events.module#EventsModule",
+    loadChildren: () => import('./events/events.module').then(m => m.EventsModule),
   },
   {
     path: "gallery",
-    loadChildren: "./gallery/gallery.module#GalleryModule",
+    loadChildren: () => import('./gallery/gallery.module').then(m => m.GalleryModule),
   },
   {
     path: "contributors",
-    loadChildren: "./contributors/contributors.module#ContributorsModule",
+    loadChildren: () => import('./contributors/contributors.module').then(m => m.ContributorsModule),
   },
   {
     path: "contact-us",
-    loadChildren: "./contact/contact.module#ContactModule",
+    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
   },
   { path: "", pathMatch: "full", redirectTo: "/home" },
   { path: "**", component: HTTP404Component },
