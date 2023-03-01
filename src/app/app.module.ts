@@ -1,19 +1,19 @@
+import { HttpClientModule } from "@angular/common/http";
+import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NgModule } from "@angular/core";
-import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
 // Loading bar
-import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 import { LoadingBarModule } from "@ngx-loading-bar/core";
+import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 
 // Import modules
-import { HomeModule } from "./home/home.module";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CoreModule } from "./core/core.module";
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeModule } from "./home/home.module";
 
 @NgModule({
   declarations: [AppComponent],

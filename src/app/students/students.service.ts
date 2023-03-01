@@ -1,33 +1,42 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { Databases } from "appwrite";
 
-import { API_URL } from "src/environments/environment";
-import { Observable, of } from "rxjs";
-import { catchError } from "rxjs/operators";
+import { from, Observable, of } from "rxjs";
+import { catchError, map } from "rxjs/operators";
+import { environment } from "src/environments/environment";
+import { Appwrite } from "../api/appwrite";
 import { Student } from "./student.type";
 
 @Injectable({
   providedIn: "root",
 })
 export class StudentsService {
-  url: string;
+  db: Databases;
 
-  constructor(private http: HttpClient) {
-    this.url = `${API_URL}/students`;
+  constructor() {
+    this.db = Appwrite.database();
   }
 
-  getStudentsList(): Observable<Student[]> {
-    return this.http
-      .get<Student[]>(this.url)
-      .pipe(catchError(this.handleError<Student[]>("getStudentsList", [])));
+  getStudentsList() {
+    return from(
+      this.db.listDocuments<Student>(
+        environment.DATABASE.ID,
+        environment.DATABASE.STUDENTS
+      )
+    ).pipe(
+      map((res) => res.documents),
+      catchError(this.handleError("getStudentsList", []))
+    );
   }
 
   getStudent(id: number): Observable<Student> {
-    const url = `${this.url}/${id}`;
-
-    return this.http
-      .get<Student>(url)
-      .pipe(catchError(this.handleError<Student>(`getStudent id=${id}`)));
+    return from(
+      this.db.getDocument<Student>(
+        environment.DATABASE.ID,
+        environment.DATABASE.STUDENTS,
+        String(id)
+      )
+    ).pipe(catchError(this.handleError<Student>(`getStudent id=${id}`)));
   }
 
   /**
