@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Student } from "../student.type";
 import { StudentsService } from "../students.service";
 
 @Component({
@@ -8,7 +9,7 @@ import { StudentsService } from "../students.service";
 })
 export class StudentsListComponent implements OnInit {
   title: string;
-  students: NewType[] = [];
+  students: Student[] = [];
 
   constructor(private studentsService: StudentsService) {
     this.title = "Students supported by us";

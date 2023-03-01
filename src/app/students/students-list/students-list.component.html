@@ -22,7 +22,7 @@
         </h3>
         <p
           class="lead text-muted text-justify"
-          [innerHtml]="student.short_description"
+          [innerHtml]="student.short_description | markdown"
         ></p>
         <p>
           <a
