@@ -1,6 +1,6 @@
 <ng-container *ngIf="students.length; else elseTemplate">
   <section class="container">
-    <div id="title" class="text-center text-md-left p-2 p-md-0">
+    <div id="title" class="text-center text-md-start p-2 p-md-0">
       <h3 class="page-title pt-3 mb-5">{{ title }}</h3>
     </div>
     <div
@@ -16,8 +16,8 @@
           width="180"
         />
       </div>
-      <div class="col-lg-10 text-center pl-lg-5">
-        <h3 class="text-primary text-lg-left">
+      <div class="col-lg-10 pl-lg-5">
+        <h3 class="text-primary text-lg-start">
           <a [routerLink]="student.id">{{ student.name }}</a>
         </h3>
         <p
@@ -26,8 +26,8 @@
         ></p>
         <p>
           <a
-            class="btn btn-secondary float-lg-left align-self-center"
-            [routerLink]="student.id"
+            class="btn btn-secondary float-lg-start align-self-center text-white"
+            [routerLink]="student.$id"
             role="button"
           >
             View details &raquo;

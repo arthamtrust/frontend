@@ -29,7 +29,7 @@ export class StudentsService {
     );
   }
 
-  getStudent(id: number): Observable<Student> {
+  getStudent(id: string): Observable<Student> {
     return from(
       this.db.getDocument<Student>(
         environment.DATABASE.ID,
